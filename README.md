@@ -51,14 +51,23 @@ XGBoost (Macro F1: 0.8489)
 2. 모델의 종류를 늘린 후 가장 높은 정확도 모델 선택
 - -- 개별 모델 훈련 및 평가 ---
 ▶ 모델 훈련: Random Forest Random Forest Macro F1 Score: 0.8084
+
 ▶ 모델 훈련: Extra Trees Extra Trees Macro F1 Score: 0.7942
+
 ▶ 모델 훈련: AdaBoost AdaBoost Macro F1 Score: 0.2450
+
 ▶ 모델 훈련: XGBoost XGBoost Macro F1 Score: 0.8485
+
 ▶ 모델 훈련: KNN KNN Macro F1 Score: 0.4470
+
 ▶ 모델 훈련: LightGBM LightGBM Macro F1 Score: 0.8379
+
 - -- 앙상블 모델 훈련 및 평가 ---
+- 
 ▶ 모델 훈련: Voting Ensemble
+
 [LightGBM] [Warning] min_gain_to_split is set=0, min_split_gain=0.0 will be ignored. Current value: min_gain_to_split=0
+
 Voting Ensemble Macro F1 Score: 0.8363
 ▶ 모델 훈련: Stacking Ensemble
 [LightGBM] [Warning] min_gain_to_split is set=0, min_split_gain=0.0 will be ignored. Current value: min_gain_to_split=0
