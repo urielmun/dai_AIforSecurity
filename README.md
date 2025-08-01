@@ -69,16 +69,25 @@ XGBoost (Macro F1: 0.8489)
 [LightGBM] [Warning] min_gain_to_split is set=0, min_split_gain=0.0 will be ignored. Current value: min_gain_to_split=0
 
 Voting Ensemble Macro F1 Score: 0.8363
+
 ▶ 모델 훈련: Stacking Ensemble
+
 [LightGBM] [Warning] min_gain_to_split is set=0, min_split_gain=0.0 will be ignored. Current value: min_gain_to_split=0
+
 Stacking Ensemble Macro F1 Score: 0.0815
+
 =========================================
+
 최종 최적 모델: XGBoost (Macro F1: 0.8485)
+
 2-2. 파라미터값 최적화(그리드 서치 이용)
+
 각 모델의 기본값 대신 가장 높은 정확도를 기록하는 파라미터 값을 선택하여 업데이트
+
 최종 최적 모델: XGBoost (Macro F1: 0.8489)
 
 #최종 리서치 
+
 해당 대회는 인공지능 모델을 사용하여 20개의 특성을 분석하여 사이버 공격 유형 12개 중 하나로 분류한다. 
 
 따라서 분류 모델의 적용이 유리하다. decisionTree base/Ensemble
@@ -87,5 +96,3 @@ Stacking Ensemble Macro F1 Score: 0.0815
 - Voting Ensemble Macro F1 Score: 0.8363
 - LightGBM Macro F1 Score: 0.8379
 - XGBoost Macro F1 Score: 0.8485
-08.18
-최종 수상자 발표
