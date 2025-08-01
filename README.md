@@ -38,23 +38,45 @@ Macro F1-score: 전체 C개의 클래스 각각의 F1 단순 평균낸 값
 
 정확도>속도
 
+#최적화 과정 
+1-1. 앙상블 모델의 적용 
+bagging→ RandomForestClassifier
+boosting→XGBClassifier
+softVoting→ VotingClassifier
+세 개 모델의 train.csv 상의 F1-socre을 비교하여 정확도가 가장 높은 모델을 선택
+최적 모델: XGBoost (Macro F1: 0.8562)
+1-2. LabelEncoding→TargetEncoding
+XGBoost (Macro F1: 0.8489) 
 
-# 코드 제출
-- 제목에 Private 순위와 사용한 모델, 코드에 대한 keyword 기재
-- 전처리, 학습, 추론 등 단계별로 코드를 작성하여 제출
+2. 모델의 종류를 늘린 후 가장 높은 정확도 모델 선택
+- -- 개별 모델 훈련 및 평가 ---
+▶ 모델 훈련: Random Forest Random Forest Macro F1 Score: 0.8084
+▶ 모델 훈련: Extra Trees Extra Trees Macro F1 Score: 0.7942
+▶ 모델 훈련: AdaBoost AdaBoost Macro F1 Score: 0.2450
+▶ 모델 훈련: XGBoost XGBoost Macro F1 Score: 0.8485
+▶ 모델 훈련: KNN KNN Macro F1 Score: 0.4470
+▶ 모델 훈련: LightGBM LightGBM Macro F1 Score: 0.8379
+- -- 앙상블 모델 훈련 및 평가 ---
+▶ 모델 훈련: Voting Ensemble
+[LightGBM] [Warning] min_gain_to_split is set=0, min_split_gain=0.0 will be ignored. Current value: min_gain_to_split=0
+Voting Ensemble Macro F1 Score: 0.8363
+▶ 모델 훈련: Stacking Ensemble
+[LightGBM] [Warning] min_gain_to_split is set=0, min_split_gain=0.0 will be ignored. Current value: min_gain_to_split=0
+Stacking Ensemble Macro F1 Score: 0.0815
+=========================================
+최종 최적 모델: XGBoost (Macro F1: 0.8485)
+2-2. 파라미터값 최적화(그리드 서치 이용)
+각 모델의 기본값 대신 가장 높은 정확도를 기록하는 파라미터 값을 선택하여 업데이트
+최종 최적 모델: XGBoost (Macro F1: 0.8489)
 
-# 일정
-06.02
-대회 시작
+#최종 리서치 
+해당 대회는 인공지능 모델을 사용하여 20개의 특성을 분석하여 사이버 공격 유형 12개 중 하나로 분류한다. 
 
-07.31
-대회 종료
+따라서 분류 모델의 적용이 유리하다. decisionTree base/Ensemble
 
-08.05
-코드 및 PPT 제출 마감
-
-08.14
-코드 검증
-
+- Random Forest Macro F1 Score: 0.8084
+- Voting Ensemble Macro F1 Score: 0.8363
+- LightGBM Macro F1 Score: 0.8379
+- XGBoost Macro F1 Score: 0.8485
 08.18
 최종 수상자 발표
